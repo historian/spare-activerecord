@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'rubygems'
+  require 'snapshots'
+rescue LoadError
+  require File.join(File.dirname(__FILE__), *%w[ .. lib snapshots ])
+end
+
+Snapshots::App.start
