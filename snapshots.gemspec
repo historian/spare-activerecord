@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/snapshots/database_dumper.rb",
      "lib/snapshots/database_loader.rb",
      "lib/snapshots/tasks.rb",
+     "snapshots.gemspec",
      "test/snapshots_test.rb",
      "test/test_helper.rb"
   ]
