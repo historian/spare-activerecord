@@ -38,6 +38,7 @@ module Snapshots
       File.open(snapshot_path, 'w+') do |f|
         Snapshots::DatabaseDumper.dump(connection, f)
       end
+      snapshot_path
     end
     
   end

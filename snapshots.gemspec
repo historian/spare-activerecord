@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simon Menke"]
-  s.date = %q{2009-09-21}
+  s.date = %q{2009-09-24}
   s.default_executable = %q{snapshots}
   s.description = %q{Dump your rails databases in a database agnostic format (ruby).}
   s.email = %q{simon@mrhenry.be}
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/simonmenke/snapshots}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.4}
   s.summary = %q{Make snapshots of your ActiveRecord database}
   s.test_files = [
     "test/snapshots_test.rb",
