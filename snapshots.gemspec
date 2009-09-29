@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{snapshots}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simon Menke"]
-  s.date = %q{2009-09-25}
+  s.date = %q{2009-09-29}
   s.default_executable = %q{snapshots}
   s.description = %q{Dump your rails databases in a database agnostic format (ruby).}
   s.email = %q{simon@mrhenry.be}
