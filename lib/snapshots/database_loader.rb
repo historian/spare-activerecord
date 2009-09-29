@@ -42,7 +42,7 @@ module Snapshots
       
       return if quoted_attributes.empty?
       
-      column_names = @columns.collect { |column| column.name }
+      column_names = @columns.collect { |column| "#{@table}.#{column.name}" }
       statement = "INSERT INTO #{@table} (#{column_names.join(', ')}) VALUES(#{quoted_attributes.join(', ')})"
       
       @connection.insert(statement, "#{@table} Create")

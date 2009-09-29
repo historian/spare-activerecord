@@ -45,7 +45,7 @@ EOC
     def table_for_data(table, stream)
       columns = @connection.columns(table)
       
-      column_names = columns.collect { |column| column.name }
+      column_names = columns.collect { |column| "#{table}.#{column.name}" }
       
       rows = @connection.select_rows("SELECT #{column_names.join(', ')} FROM #{table}")
       
