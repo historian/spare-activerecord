@@ -41,7 +41,7 @@ module Spare::ActiveRecord
     def load_partition(table_name, partition, columns, key_list)
       puts "-- Loading partition #{File.basename(partition)}"
       File.open(partition, 'r') do |file|
-        while row = YAML.load(file)
+        YAML.each_document(file) do |row|
 
           value_list = columns.map { |c| @connection.quote(row[c.name], c).gsub('[^\]\\n', "\n").gsub('[^\]\\r', "\r") }
           value_list = value_list.join(', ')
