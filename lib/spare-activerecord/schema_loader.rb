@@ -11,7 +11,10 @@ module Spare::ActiveRecord
     end
 
     def load
+      _stdout, $stdout = $stdout, StringIO.new
       Kernel.load File.join(@dump_dir, '_schema.rb')
+    ensure
+      $stdout = _stdout
     end
 
   end

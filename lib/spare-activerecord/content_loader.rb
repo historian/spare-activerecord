@@ -18,7 +18,7 @@ module Spare::ActiveRecord
       Dir.glob(File.join(@dump_dir, '*')).each do |table|
         next unless File.directory?(table)
         table_name = File.basename(table)
-        puts "Loading table #{table_name}"
+        # puts "Loading table #{table_name}"
         load_table(table_name)
       end
     end
@@ -39,7 +39,7 @@ module Spare::ActiveRecord
     end
 
     def load_partition(table_name, partition, columns, key_list)
-      puts "-- Loading partition #{File.basename(partition)}"
+      # puts "-- Loading partition #{File.basename(partition)}"
       File.open(partition, 'r') do |file|
         YAML.each_document(file) do |row|
 
