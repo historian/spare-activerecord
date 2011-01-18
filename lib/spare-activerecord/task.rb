@@ -5,8 +5,8 @@ module Spare::ActiveRecord
       super(base_name) do
         instance_eval(&block) if block
 
-        before_backup  'load_env' => 'environment'
-        before_restore 'load_env' => 'environment'
+        before_backup  'environment'
+        before_restore 'environment'
 
         backup do |t|
           Spare::ActiveRecord::DatabaseDumper.dump
