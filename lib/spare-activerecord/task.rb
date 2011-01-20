@@ -5,13 +5,14 @@ module Spare::ActiveRecord
       super(base_name) do
         instance_eval(&block) if block
 
+        include_files 'db/backup/_schema.rb'
+        include_files FileList['db/backup/*/*.yml']
+
         before_backup  'environment'
         before_restore 'environment'
 
-        backup do |t|
+        backup do
           Spare::ActiveRecord::DatabaseDumper.dump
-          t.include 'db/backup/_schema.rb'
-          t.include FileList['db/backup/*/*.yml']
         end
 
         after_backup do
