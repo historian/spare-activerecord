@@ -11,7 +11,11 @@ module Spare::ActiveRecord
 
     def tables(stream)
       if @connection.tables.include?('schema_migrations')
-        table('schema_migrations', stream)
+        stream.puts \
+        "  create_table \"schema_migrations\", :id => false, :force => true do |t|\n"+
+        "    t.string \"version\"\n"+
+        "  end\n"+
+        "  add_index \"schema_migrations\", [\"version\"], :name => \"unique_schema_migrations\", :unique => true\n"
       end
 
       super(stream)
